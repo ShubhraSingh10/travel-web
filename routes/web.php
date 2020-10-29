@@ -15,8 +15,15 @@ use App\Http\Controllers\Auth\RegisterController;
 |
 */
 
-Route::get('/register',[RegisterController::class, 'get']);
-Route::post('/register', [RegisterController::class, 'post']);
-Route::view('/login','pages.login');
-Route::get('/login',[LoginController::class, 'get']);
-Route::post('/login', [LoginController::class, 'post']);
+Route::group(['middleware' => 'guest'], function() {
+    Route::get('/register',[RegisterController::class, 'get'])->name('register');
+    Route::post('/register', [RegisterController::class, 'post']);
+    
+    Route::get('/login',[LoginController::class, 'get'])->name('login');
+    Route::post('/login', [LoginController::class, 'post']);
+});
+
+
+
+Route::view('/','pages.home');
+Route::view('/home','pages.home');
