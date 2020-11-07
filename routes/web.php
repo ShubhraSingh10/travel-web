@@ -26,7 +26,7 @@ Route::group(['middleware' => 'guest'], function() {
     Route::post('/login', [LoginController::class, 'post']);
 });
 
-Route::get('/admin/hotels/add',[HotelAddController::class, 'get']);
+Route::get('/admin/hotels/add',[HotelAddController::class, 'get'])->name('admin.hotels.add');
 Route::post('/admin/hotels/add',[HotelAddController::class, 'post']);
 
 
