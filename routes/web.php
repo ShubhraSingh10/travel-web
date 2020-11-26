@@ -1,11 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CheckinController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Admin\HotelsController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Admin\HotelAddController;
 use App\Http\Controllers\Admin\HotelEditController;
-use App\Http\Controllers\Admin\HotelsController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,13 +27,19 @@ Route::group(['middleware' => 'guest'], function() {
     Route::post('/login', [LoginController::class, 'post']);
 });
 
+Route::view('/','pages.home');
+Route::view('/home','pages.home')->name('home');
+
+Route::group(['middleware' => 'auth'], function() {
+  Route::get('/checkin',[CheckinController::class, 'get'])->name('checkin');
+});
+
+// Admin
+Route::get('/admin/hotels',[HotelsController::class, 'get'])->name('admin.hotels');
+
 Route::get('/admin/hotels/add',[HotelAddController::class, 'get'])->name('admin.hotels.add');
 Route::post('/admin/hotels/add',[HotelAddController::class, 'post']);
 
-
-Route::view('/','pages.home');
-Route::view('/home','pages.home');
-
-Route::get('/admin/hotels',[HotelsController::class, 'get'])->name('admin.hotels');
 Route::get('/admin/hotels/edit/{id}', [HotelEditController::class, 'get'])->name('admin.hotels.edit');
 Route::post('/admin/hotels/edit/{id}', [HotelEditController::class, 'post']);
+

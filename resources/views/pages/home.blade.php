@@ -15,7 +15,7 @@
                         @if ($hotel->tv==="1") <span class="badge badge-dark"><i class="fas fa-tv"></i>&nbsp;TV &nbsp;</span> @endif
                         @if ($hotel->wifi==="1") <span class="badge badge-dark"><i class="fas fa-wifi"></i>&nbsp;WIFI &nbsp;</span> @endif
                     </div>
-                    <a href="#" class="btn btn-primary">Book</a>
+                    <a href="{{route('checkin')}}?hotel={{$hotel->id}}" class="btn btn-primary">Book</a>
                 </div>
             </div>
         </div>
