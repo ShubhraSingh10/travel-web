@@ -32,6 +32,7 @@ Route::view('/home','pages.home')->name('home');
 
 Route::group(['middleware' => 'auth'], function() {
   Route::get('/checkin',[CheckinController::class, 'get'])->name('checkin');
+  Route::post('/checkin',[CheckinController::class, 'post']);
 });
 
 // Admin
