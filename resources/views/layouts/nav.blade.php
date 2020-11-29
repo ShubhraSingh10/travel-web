@@ -18,7 +18,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
         <div class="dropdown-menu" aria-labelledby="dropdown03">
           <a class="dropdown-item" href="{{route('admin.hotels')}}">Hotels</a>
-          <a class="dropdown-item" href="#">Bookings</a>
+          <a class="dropdown-item" href="{{route('admin.bookings')}}">Bookings</a>
         </div>
       </li>
       @endif

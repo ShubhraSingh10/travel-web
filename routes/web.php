@@ -5,6 +5,7 @@ use App\Http\Controllers\CheckinController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\HotelsController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Admin\BookingsController;
 use App\Http\Controllers\Admin\HotelAddController;
 use App\Http\Controllers\Admin\HotelEditController;
 
@@ -36,6 +37,8 @@ Route::group(['middleware' => 'auth'], function() {
 });
 
 // Admin
+Route::get('/admin/bookings',[BookingsController::class, 'get'])->name('admin.bookings');
+
 Route::get('/admin/hotels',[HotelsController::class, 'get'])->name('admin.hotels');
 
 Route::get('/admin/hotels/add',[HotelAddController::class, 'get'])->name('admin.hotels.add');
