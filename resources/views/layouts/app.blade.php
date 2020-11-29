@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="{{asset('/css/style.css')}}">
 </head>
 <body>
     @include('layouts.nav')

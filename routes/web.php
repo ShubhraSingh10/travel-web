@@ -44,3 +44,5 @@ Route::post('/admin/hotels/add',[HotelAddController::class, 'post']);
 Route::get('/admin/hotels/edit/{id}', [HotelEditController::class, 'get'])->name('admin.hotels.edit');
 Route::post('/admin/hotels/edit/{id}', [HotelEditController::class, 'post']);
 
+Route::view('/aboutus','pages.aboutus')->name('aboutus');
+
