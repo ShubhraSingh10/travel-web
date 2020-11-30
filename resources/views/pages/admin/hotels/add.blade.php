@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container">
+<div class="container" style="margin-top:50px">
   <div class="row justify-content-center">
     <div class="col-sm-12">
       <div class="card">
@@ -61,6 +61,13 @@
               <label for="exampleInputEmail1">Rating</label>
               <input type="number" class="form-control @error('rating')is-invalid @enderror" name="rating" value="{{old('rating')}}">
               @error('rating')
+              <p class="invalid-feedback">{{$message}}</p>
+              @enderror
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Map</label>
+              <textarea class="form-control @error('map')is-invalid @enderror" name="map" value="{{old('map')}}"></textarea>
+              @error('map')
               <p class="invalid-feedback">{{$message}}</p>
               @enderror
             </div>

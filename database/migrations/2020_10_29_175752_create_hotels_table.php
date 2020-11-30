@@ -22,6 +22,7 @@ class CreateHotelsTable extends Migration
             $table->double('price');
             $table->double('rating');
             $table->longtext('images')->nullable();
+            $table->longtext('map')->nullable();
             $table->enum('ac', [0,1]);
             $table->enum('tv', [0,1]);
             $table->enum('wifi', [0,1]);

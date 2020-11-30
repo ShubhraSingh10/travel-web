@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" style="margin-top:50px">
+                <div class="card" style="margin-top:50px;margin-bottom:50px">
                     <div class="card-body">
                         <h5 class="card-title">Booking Details</h5>
                         
@@ -74,6 +74,7 @@
                         </div>
                     </div>
                 </div>
+                {!!$hotel->map!!}
             </div>
             <div class="col-sm-3">
                 <div class="card">

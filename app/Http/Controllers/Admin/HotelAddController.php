@@ -23,6 +23,7 @@ class HotelAddController extends Controller
         $hotel->category = $request->input('category');
         $hotel->price = $request->input('price');
         $hotel->rating = $request->input('rating');
+        $hotel->map = $request->input('map');
         $hotel->ac = $request->has('ac') ? '1': '0';
         $hotel->wifi = $request->has('wifi') ? '1': '0';
         $hotel->tv = $request->has('tv') ? '1': '0';
