@@ -1,8 +1,31 @@
 @extends('layouts.app')
 @section('content')
+<div class="site-intro">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+                <div class="card" style="margin-top: 200px">
+                    <div class="card-body">
+                        <div class="search-input">
+                        <input placeholder="Search for hotel..." name="search-input" value="{{Request::input('q', '')}}"/>
+                            <i class="fas fa-search search-button"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container" style="margin-top:50px">
     <div class="row">
-        @foreach (App\Models\Hotel::all() as $hotel)
+        @php
+            $hotels = App\Models\Hotel::query();
+            if(strlen(Request::input('q', '')) > 1) {
+                $hotels = $hotels->where('name', 'like', '%' . Request::input('q') . '%');
+            }
+            $hotels = $hotels->get();
+        @endphp
+        @foreach ($hotels as $hotel)
         <div class="col-sm-3">
             <div class="card" style="margin-bottom: 20px">
                 <img src="{{Storage::url($hotel->images[0])}}" alt="Card image cap" style="width: 100%;height: 220px;object-fit:cover">
@@ -22,4 +45,20 @@
         @endforeach
     </div>
 </div>
+@endsection
+@section('script')
+<script type="text/javascript">
+    const actionSearch = function() {
+        const input = $('[name="search-input"]').val();
+        window.location.href = window.location.origin + window.location.pathname + "?q=" + input
+    }
+    $('[name="search-input"]').on('keyup', function(e) {
+        if (e.key === 'Enter' || e.keyCode === 13) {
+            actionSearch();
+        }
+    })
+    $('.search-button').on('click', function() {
+        actionSearch();
+    });
+</script>
 @endsection

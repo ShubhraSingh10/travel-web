@@ -1,7 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 body {
-    font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
+
+/* Site Intro */
+.site-intro {
+  background-image: url(https://www.aroell.com/wp-content/uploads/2017/12/wallpapers-3d-hotel-design-hd-wallpaper-artistic-hd-wallpapers.jpg);
+  width: 100%;
+  height: 300px;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.site-intro .card-body {
+  padding: 10px 15px;
+}
+.site-intro .search-input {
+  position: relative;
+  width: 100%;
+}
+.site-intro .search-input input{
+  width: 100%;
+  border: none;
+  outline: none;
+  padding-right: 18px;
+}
+.site-intro .search-input input:hover{
+  border: none;
+}
+.site-intro .search-input .fas{
+  position: absolute;
+  top: 5px;
+  right: 0px;
+  color: #b5b5b5;
+}
+
+/* Site Footer */
 .site-footer
 {
   background-color:#26272b;
