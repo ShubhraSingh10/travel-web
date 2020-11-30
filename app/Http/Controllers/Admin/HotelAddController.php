@@ -27,8 +27,10 @@ class HotelAddController extends Controller
         $hotel->wifi = $request->has('wifi') ? '1': '0';
         $hotel->tv = $request->has('tv') ? '1': '0';
         $images = [];
-        foreach($request->images as $image) {
-            array_push($images, $image->store('hotels'));
+        if($request->has('images')) {
+            foreach($request->images as $image) {
+                array_push($images, $image->store('hotels'));
+            }
         }
         $hotel->images = $images;
         $hotel->save();

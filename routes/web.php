@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BookingEditController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CheckinController;
 use App\Http\Controllers\Auth\LoginController;
@@ -38,8 +39,14 @@ Route::group(['middleware' => 'auth'], function() {
 
 // Admin
 Route::get('/admin/bookings',[BookingsController::class, 'get'])->name('admin.bookings');
+Route::get('/admin/bookings/delete/{booking}',[BookingsController::class, 'delete'])->name('admin.bookings.delete');
+
+Route::get('/admin/bookings/edit/{booking}', [BookingEditController::class, 'get'])->name('admin.bookings.edit');
+Route::post('/admin/bookings/edit/{booking}', [BookingEditController::class, 'post']);
+
 
 Route::get('/admin/hotels',[HotelsController::class, 'get'])->name('admin.hotels');
+Route::get('/admin/hotels/delete/{hotels}',[HotelsController::class, 'delete'])->name('admin.hotels.delete');
 
 Route::get('/admin/hotels/add',[HotelAddController::class, 'get'])->name('admin.hotels.add');
 Route::post('/admin/hotels/add',[HotelAddController::class, 'post']);
@@ -48,4 +55,5 @@ Route::get('/admin/hotels/edit/{id}', [HotelEditController::class, 'get'])->name
 Route::post('/admin/hotels/edit/{id}', [HotelEditController::class, 'post']);
 
 Route::view('/aboutus','pages.aboutus')->name('aboutus');
+Route::view('/tips','pages.tips')->name('tips');
 

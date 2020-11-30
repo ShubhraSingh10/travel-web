@@ -20,6 +20,7 @@
                                 <th>Photo</th>
                                 <th>Description</th>
                                 <th>Actions</th>
+                                <th>Remove</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,6 +36,9 @@
                                 <th>
                                     <a class="btn btn-warning btn-sm" href="{{route('admin.hotels.edit',$hotel->id)}}">Edit</a>
                                 </th>
+                                <td>
+                                <a href="{{route('admin.hotels.delete', $hotel->id)}}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

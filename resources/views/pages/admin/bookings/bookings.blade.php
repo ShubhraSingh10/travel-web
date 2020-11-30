@@ -15,12 +15,12 @@
                             <tr>
                                 <th>Hotel Name</th>
                                 <th>Booked By</th>
-                                <th>No. Rooms</th>
-                                <th>no. Guest</th>
-                                <th>Checkin_Date</th>
-                                <th>Checkin_Time</th>
-                                <th>Checkout_Date</th>
-                                <th>Checkout_Time</th>
+                                <th>Room(s)</th>
+                                <th>Guest(s)</th>
+                                <th>Checkin</th>
+                                <th>Checkout</th>
+                                <th>Time</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,10 +30,13 @@
                                 <td>{{$booking->user->name}}</td>
                                 <td>{{$booking->no_room}}</td>
                                 <td>{{$booking->no_guest}}</td>
-                                <td>{{$booking->checkin_date->format('d-m-Y')}}</td>
-                                <td>{{$booking->checkinTimeFormated()}}</td>
-                                <td>{{$booking->checkout_date->format('d-m-Y')}}</td>
-                                <td>{{$booking->checkoutTimeFormated()}}</td>
+                                <td>{{$booking->checkin_date->format('d-m-Y')}} {{$booking->checkinTimeFormated()}}</td>
+                                <td>{{$booking->checkout_date->format('d-m-Y')}} {{$booking->checkoutTimeFormated()}}</td>
+                                <td>{{$booking->created_at->diffForHumans()}}</td>
+                                <td>
+                                <a href="{{route('admin.bookings.edit', $booking->id)}}" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                <a href="{{route('admin.bookings.delete', $booking->id)}}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

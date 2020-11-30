@@ -20,16 +20,16 @@ class CheckinController extends Controller
 
     public function post(CheckinRequest $request)
     {
-        $hotel = new Booking();
-        $hotel->hotel_id = $request->input('hotel_id');
-        $hotel->user_id = Auth::user()->id;
-        $hotel->no_guest = $request->input('no_guest');
-        $hotel->no_room = $request->input('no_room');
-        $hotel->checkin_date = $request->input('checkin_date');
-        $hotel->checkin_time = $request->input('checkin_time');
-        $hotel->checkout_date = $request->input('checkout_date');
-        $hotel->checkout_time = $request->input('checkout_time');
-        $hotel->save();
+        $booking = new Booking();
+        $booking->hotel_id = $request->input('hotel_id');
+        $booking->user_id = Auth::user()->id;
+        $booking->no_guest = $request->input('no_guest');
+        $booking->no_room = $request->input('no_room');
+        $booking->checkin_date = $request->input('checkin_date');
+        $booking->checkin_time = $request->input('checkin_time');
+        $booking->checkout_date = $request->input('checkout_date');
+        $booking->checkout_time = $request->input('checkout_time');
+        $booking->save();
         return redirect('/');
     }
 }

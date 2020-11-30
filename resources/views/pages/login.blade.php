@@ -4,7 +4,7 @@
     <div class="col-sm-6">
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">Login</h5>
+                <h5 class="card-title">Login for Exclusive Offer</h5>
                 <form method='POST'>
                     @csrf 
                     @if (isset($loginFailed))

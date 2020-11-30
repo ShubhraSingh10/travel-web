@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">Travel Web</a>
+  <a class="navbar-brand" href="#"><i><b>Musafir</b></i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -28,6 +28,9 @@
         <a class="nav-link btn btn-success btn-sm" href="{{route('login')}}">Login</a>
       </li>
       @endif
+      <li class="nav-item">
+      <a class="nav-link" href="{{route('tips')}}">Tips</a>
+      </li>
     </ul>
   </div>
 </nav>
