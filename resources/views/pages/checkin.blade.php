@@ -87,15 +87,20 @@
             </div>
         </div>
     </form>
+    <div class="row">
+        <div class="col-sm-9">
+            @comments(['model' => $hotel])
+        </div>
+    </div>
 </div>
 @endsection
 @section('script')
 <script type="text/javascript">
     const price = {{$hotel->price}};
     $(document).ready(function() {
-       $('#no_room').change(function(e) {
+        $('#no_room').change(function(e) {
             $('#price_text').html(`&#x20B9; ${$('#no_room').val() * price}`)
-       });
+        });
     })
 </script>
 @endsection
