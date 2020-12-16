@@ -198,3 +198,17 @@ body {
     font-weight:600
   }
 }
+
+/*Login */
+.loginbg {
+  background-image: url(https://images.pexels.com/photos/453201/pexels-photo-453201.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+  text-decoration-color: white;
+}
+.row1 {
+  background-image: url(https://images.pexels.com/photos/453201/pexels-photo-453201.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+}
+
+/* About us */
+.container1{
+  background-image: url(https://images.pexels.com/photos/860922/pexels-photo-860922.jpeg?cs=srgb&dl=pexels-oleg-magni-860922.jpg&fm=jpg);
+}

@@ -10,7 +10,7 @@
         <a class="nav-link" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-      <a class="nav-link" href="{{route('aboutus')}}">About</a>
+      <a class="nav-link" href="{{route('tips')}}">Tips</a>
       </li>
       @if (Auth::check())
       @if (Auth::user()->role === 'admin')
@@ -23,14 +23,18 @@
       </li>
       @endif
       @endif
+      <li class="nav-item">
+      <a class="nav-link" href="{{route('aboutus')}}">About</a>
+      </li>
       @if (Auth::check() === false)
       <li class="nav-item">
-        <a class="nav-link btn btn-success btn-sm" href="{{route('login')}}">Login</a>
+        <a class="nav-link" href="{{route('login')}}">Login</a>
+      </li>
+      @else
+      <li class="nav-item">
+      <a class="nav-link" href="{{route('logout')}}">Logout</a>
       </li>
       @endif
-      <li class="nav-item">
-      <a class="nav-link" href="{{route('tips')}}">Tips</a>
-      </li>
     </ul>
   </div>
 </nav>

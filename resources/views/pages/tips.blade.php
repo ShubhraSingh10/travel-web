@@ -1,9 +1,11 @@
 @extends('layouts.app')
 @section('content')
-<div class="container" style="margin-top:50px">
+<div class="container" style="margin-top:0px; background-image:url(https://images.pexels.com/photos/1334605/pexels-photo-1334605.jpeg?cs=srgb&dl=pexels-cameron-casey-1334605.jpg&fm=jpg)">
   <div class="row">
     <div class="col-sm-12">
-      <h1 class="text-center"><i><b>How to Pack for Any Climate & Any Weather</b></i></h1>
+      <br>
+      <h2 class="text-center" style="color:white;"><i><b>How to Pack for Any Climate & Any Weather</b></i></h2>
+      <br>
       <div class="card">
         <div class="card-body">
           <div class="Tips">

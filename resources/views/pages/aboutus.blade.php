@@ -1,13 +1,14 @@
 @extends('layouts.app')
 @section('content')
-<div class="container" style="margin-top:50px">
+<div class="container1" style="margin-top:0px; background-image:url(https://images.pexels.com/photos/1334605/pexels-photo-1334605.jpeg?cs=srgb&dl=pexels-cameron-casey-1334605.jpg&fm=jpg)">
     <div class="row">
         <div class="col-sm-12">
-            <h1 class="text-center">About Musafir</h1>
+            <br>
+            <h2 class="text-center" style="color:white;">About <b>MUSAFIR</b></h2>
             <div class="card">
-                <div class="card-body">
+                <div class="card-body" style="background-image:url(https://images.pexels.com/photos/860922/pexels-photo-860922.jpeg?cs=srgb&dl=pexels-oleg-magni-860922.jpg&fm=jpg)">
                     <div class="About-us">
-                        <p>“Travel is the main thing you purchase that makes you more extravagant”. We, at ‘Organization Name’, swear by this and put stock in satisfying travel dreams that make you perpetually rich constantly. We have been moving excellent encounters for a considerable length of time through our cutting edge planned occasion bundles and other fundamental travel administrations. We rouse our clients to carry on with a rich life, brimming with extraordinary travel encounters.</p>
+                        <p>“Travel is the main thing you purchase that makes you more extravagant”. We, at MUSAFIR, swear by this and put stock in satisfying travel dreams that make you perpetually rich constantly. We have been moving excellent encounters for a considerable length of time through our cutting edge planned occasion bundles and other fundamental travel administrations. We rouse our clients to carry on with a rich life, brimming with extraordinary travel encounters.</p>
                         <br>
                         <p>Through our exceptionally curated occasion bundles, we need to take you on an adventure where you personally enjoy with the stunning magnificence of America and far off terrains. We need you to observe sensational scenes that are a long ways past your creative ability.</p>
                         <br>
